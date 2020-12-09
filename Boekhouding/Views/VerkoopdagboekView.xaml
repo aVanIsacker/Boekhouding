@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="Boekhouding.Views.VerkoopdagboekView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Boekhouding.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid Background="#FF1B3C34">
+
+        <!--AANPASSEN VOOR VERKOOPDAGBOEK-->
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="6" >
+                <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" >
+                    <Image Source="/Boekhouding;component/Resources/plus.png"/>
+                </Button>
+                <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" >
+                    <Image Source="/Boekhouding;component/Resources/delete.png"/>
+                </Button>
+                <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}"  >
+                    <Image Source="/Boekhouding;component/Resources/edit.png"/>
+                </Button>
+            </StackPanel>
+
+
+            <Border Grid.Row="1" Grid.Column="1" Margin="12" 
+                    CornerRadius="16,0,16,0" BorderThickness="2" 
+                    BorderBrush="#526e6c">
+
+                <DataGrid Grid.Row="1" Grid.Column="1" Margin="1"
+                            MinHeight="200"  Padding="6"         
+                 BorderBrush="{x:Null}" Foreground="AntiqueWhite" Background="{x:Null}"
+                          ItemsSource="{Binding KasBoek}"  SelectedItem="SelectedKasVerrichting"/>
+            </Border>
+
+
+        </Grid>
+
+    </Grid>
+
+</UserControl>
