@@ -28,6 +28,9 @@ namespace Boekhouding.ViewModels
             KlantenVM = new KlantenViewModel(_dataService);         //object aanmaken van klantenVM anders gaat null zijn, moet _dataService doorgeven (nodig om klanten op te halen)             
             KasBoekVM = new KasBoekViewModel(_dataService);
             LeveranciersVM = new LeveranciersViewModel(_dataService);       //object aanmaken van leveranciersVM
+            AankoopDagboekVM = new AankoopDagboekViewModel(_dataService);
+            VerkoopDagboekVM = new VerkoopDagboekViewModel(_dataService);
+            OverzichtVM = new OverzichtViewModel(_dataService);
         }
 
         //dan deze KlantenViewModel property binden aan de datacontext van de KlantenView usercontrol
@@ -64,6 +67,6 @@ namespace Boekhouding.ViewModels
             get { return _overzichtVM; }
             set { OnPropertyChanged(ref _overzichtVM, value); }
         }
-        //code aanvullen met public properties voor LeveranciersVM,  AankoopDagboekVM, VerkoopDagboekVM en OverzichtVM
+        //code aanvullen met public properties voor LeveranciersVM ok,  AankoopDagboekVM ok, VerkoopDagboekVM ok en OverzichtVM ok
     }
 }

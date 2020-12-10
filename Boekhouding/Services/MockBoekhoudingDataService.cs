@@ -64,11 +64,26 @@ namespace Boekhouding.Services
 
         private void InitVerkoopDagBoek()
         {
-            //Verder aan te vullen
+            _verkoopDagboek = new List<VerkoopFactuur>() 
+            { 
+                new VerkoopFactuur() { UniekNr = "25002", FactuurDatum =  new DateTime(2020,2,10), Contact=_leveranciers[0], Omschrijving="Product", BedragExclBTW=60.0, BTWTarief=21, Status="onbetaald"} ,
+                new VerkoopFactuur() { UniekNr = "25002", FactuurDatum =  new DateTime(2020,3,20), Contact=_leveranciers[1], Omschrijving="Dienst", BedragExclBTW=200.0, BTWTarief=6, Status="betaald", BetaalDatum= new DateTime(2020,3,6)}, 
+                new VerkoopFactuur() { UniekNr = "25002", FactuurDatum =  new DateTime(2020,3,25), Contact=_leveranciers[1], Omschrijving="Dienst", BedragExclBTW=150.0, BTWTarief=6, Status="onbetaald"} ,
+                new VerkoopFactuur() { UniekNr = "25002", FactuurDatum =  new DateTime(2020,4,5), Contact=_leveranciers[0], Omschrijving="Product", BedragExclBTW=60.0, BTWTarief=21, Status="betaald", BetaalDatum= new DateTime(2020,6,8)} 
+            };
+
+            //Verder aan te vullen      (nog niet alles ingevuld of berekend?)
         }
 
         private void InitAankoopDagBoek()
         {
+            _aankoopDagboek = new List<AankoopFactuur>()
+            {
+                new AankoopFactuur() { UniekNr = "38001", FactuurDatum = new DateTime(2020,1,10), Contact = _klanten[0], Type="inkoop", Omschrijving="product", BedragExclBTW=35, BTWTarief=21, Status = "onbetaald" },
+                new AankoopFactuur() { UniekNr = "38001", FactuurDatum = new DateTime(2020,2,8), Contact = _klanten[0], Type="bedrijfskosten", Omschrijving="telefonie", BedragExclBTW=205, BTWTarief=6, Status = "betaald",BetaalDatum = new DateTime(2020,3,10) },
+                new AankoopFactuur() { UniekNr = "38001", FactuurDatum = new DateTime(2020,5,18), Contact = _klanten[1], Type="inkoop", Omschrijving="product", BedragExclBTW=600, BTWTarief=21, Status = "betaald", BetaalDatum = new DateTime(2020,6,10) },
+                new AankoopFactuur() { UniekNr = "38001", FactuurDatum = new DateTime(2020,6,26), Contact = _klanten[1], Type="inkoop", Omschrijving="product", BedragExclBTW=56, BTWTarief=21, Status = "onbetaald" },
+            };
             //Verder aan te vullen
         }
 
@@ -117,6 +132,27 @@ namespace Boekhouding.Services
             return _aankoopDagboek;
         }
 
+        //om verkoopfacturen aan te passen
+        public IList<VerkoopFactuur> VoegVerkoopFactuurToe(VerkoopFactuur factuur)
+        {
+            _verkoopDagboek.Add(factuur);
+            return _verkoopDagboek;
+        }
+        public void WijzigVerkoopFactuur(VerkoopFactuur nieuwefactuur)
+        {
+
+            int index = _verkoopDagboek.IndexOf(nieuwefactuur);
+            if (index >= 0)
+            {
+                _verkoopDagboek[index] = nieuwefactuur;
+            }
+        }
+        public IList<VerkoopFactuur> VerwijderVerkoopFactuur(VerkoopFactuur factuur)
+        {
+            _verkoopDagboek.Remove(factuur);
+            return _verkoopDagboek;
+        }
+
         //om leveranciers aan te passen
         public IList<Leverancier> VoegLeverancierToe(Leverancier leverancier)
         {
@@ -139,7 +175,29 @@ namespace Boekhouding.Services
             return _leveranciers;
         }
 
-        //Verder aan te vullen
+        //om klanten aan te passen
+        public IList<Klant> VoegKlantToe(Klant klant)
+        {
+            int ContactNr = (_klanten.Count > 0) ? _klanten.Max(b => b.ContactNr) + 1 : 1;
+            klant.ContactNr = ContactNr;
+            _klanten.Add(klant);
+            return _klanten;
+        }
+        public void WijzigKlant(Klant nieuwKlant)
+        {
+            int index = _klanten.IndexOf(nieuwKlant);
+            if (index >= 0)
+            {
+                _klanten[index] = nieuwKlant;
+            }
+        }
+        public IList<Klant> VerwijderKlant(Klant klant)
+        {
+            _klanten.Remove(klant);
+            return _klanten;
+        }
+
+        //Verder aan te vullen          kasboek?
 
 
 

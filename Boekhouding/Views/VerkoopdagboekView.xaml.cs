@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Boekhouding.Views
 {
     /// <summary>
-    /// Interaction logic for VerkoopdagboekView.xaml
+    /// Interaction logic for VerkoopDagboekView.xaml
     /// </summary>
-    public partial class VerkoopdagboekView : UserControl
+    public partial class VerkoopDagboekView : UserControl
     {
-        public VerkoopdagboekView()
+        public VerkoopDagboekView()
         {
             InitializeComponent();
         }

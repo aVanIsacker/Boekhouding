@@ -27,9 +27,10 @@
                 <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" >
                     <Image Source="/Boekhouding;component/Resources/delete.png"/>
                 </Button>
-                <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}"  >
+                <!--<Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}"  >
                     <Image Source="/Boekhouding;component/Resources/edit.png"/>
-                </Button>
+                </Button>-->
+                <Button Margin="6" MinWidth="100" Style="{StaticResource ButtonStyle1}" >Opslaan</Button>
                 <Button Margin="6" MinWidth="100" Style="{StaticResource ButtonStyle1}" > Annuleer </Button>
                
             </StackPanel>

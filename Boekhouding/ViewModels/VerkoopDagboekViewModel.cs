@@ -13,22 +13,22 @@ namespace Boekhouding.ViewModels
     public class VerkoopDagboekViewModel : ObservableObject
     {
         private IBoekhoudingDataService _dataservice;
-        private ObservableCollection<VerkoopFactuur> _verkoop;      //nodig voor de 2way binding
+        private ObservableCollection<VerkoopFactuur> _verkoopDagboek;      //nodig voor de 2way binding
         private VerkoopFactuur _selectedVerkoop;
 
         
         public VerkoopDagboekViewModel(IBoekhoudingDataService dataService)
         {
             _dataservice = dataService;
-            _verkoop = new ObservableCollection<VerkoopFactuur>(dataService.GeefVerkoopDagboek());
+            _verkoopDagboek = new ObservableCollection<VerkoopFactuur>(dataService.GeefVerkoopDagboek());
         }
-        public ObservableCollection<VerkoopFactuur> Verkoop
+        public ObservableCollection<VerkoopFactuur> VerkoopDagboek     //public property dat zich moet binden aan bijvoorbeeld Datagrid
         {
-            get { return _verkoop; }
-            set { OnPropertyChanged(ref _verkoop, value); }            
+                get { return _verkoopDagboek; }
+                set { OnPropertyChanged(ref _verkoopDagboek, value); }            
         }
 
-        public VerkoopFactuur SelectedVerkoop
+        public VerkoopFactuur SelectedVerkoop       //SelectedVerkoop property moet binden aan selected item op control
         {
             get { return _selectedVerkoop; }
             set { OnPropertyChanged(ref _selectedVerkoop, value); }

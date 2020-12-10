@@ -1,2 +1,238 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Boekhouding.App" Collapsed="true">
+    <Position X="21.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\MainView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Boekhouding.Models.AankoopFactuur" Collapsed="true">
+    <Position X="3.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Models\AankoopFactuur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.Models.Contact" Collapsed="true">
+    <Position X="4.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAgAAAAACAAAAAAAAAgAAACAA=</HashCode>
+      <FileName>Models\Contact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.Models.Factuur" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAIAEEAAAACAAACAAAAIABAAAAAAAAAIAEIAAAAAA=</HashCode>
+      <FileName>Models\Factuur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.Models.KasVerrichting" Collapsed="true">
+    <Position X="7.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Models\KasVerrichting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.Models.Klant" Collapsed="true">
+    <Position X="3" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Klant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.Models.Leverancier" Collapsed="true">
+    <Position X="5.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Leverancier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.Models.Totaaloverzicht" Collapsed="true">
+    <Position X="19.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQCAAAEgAAAAAAAAISAAIEAQACgAAABAAAAAAAAA=</HashCode>
+      <FileName>Models\Totaaloverzicht.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.Models.VerkoopFactuur" Collapsed="true">
+    <Position X="5.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Models\VerkoopFactuur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.Properties.Resources" Collapsed="true">
+    <Position X="23" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.Properties.Settings" Collapsed="true">
+    <Position X="24.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.Services.MockBoekhoudingDataService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAEA4AAAiAAEGEJAAABDAQAEAABACAIoAAAhAAgAA=</HashCode>
+      <FileName>Services\MockBoekhoudingDataService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Boekhouding.Utilities.ObservableObject" Collapsed="true">
+    <Position X="10.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\ObservableObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Boekhouding.Utilities.RelayCommand&lt;T&gt;" Collapsed="true">
+    <Position X="8" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEACAAQAAECAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\RelayCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Boekhouding.Utilities.RelayCommand" Collapsed="true">
+    <Position X="8" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\RelayCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.ViewModels.AankoopDagboekViewModel" Collapsed="true">
+    <Position X="14.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAIABAAAAAAAAAAAAAQBAAAAAAA=</HashCode>
+      <FileName>ViewModels\AankoopDagboekViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.ViewModels.KasBoekViewModel" Collapsed="true">
+    <Position X="3.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACIAAAAAAAAQAAAAAIAAAAAAAEA=</HashCode>
+      <FileName>ViewModels\KasBoekViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.ViewModels.KlantenViewModel" Collapsed="true">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAEAAAAAAAAACQAgICAAAAAEAAAAAEABAAAAAAgAA=</HashCode>
+      <FileName>ViewModels\KlantenViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.ViewModels.LeveranciersViewModel" Collapsed="true">
+    <Position X="8" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAkEAIIAAAAQQAAQAAAAAgAAAAgAAAA=</HashCode>
+      <FileName>ViewModels\LeveranciersViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.ViewModels.MainViewModel" Collapsed="true">
+    <Position X="10.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCAAAAAEAgAAAACIAAAAAgAAAQAAABAIAMgAAAAA=</HashCode>
+      <FileName>ViewModels\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.ViewModels.OverzichtViewModel" Collapsed="true">
+    <Position X="12.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAIAAAAAAAARAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>ViewModels\OverzichtViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.ViewModels.VerkoopDagboekViewModel" Collapsed="true">
+    <Position X="17" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAIAACAAAAAAAAAAABAAAAQAAAA=</HashCode>
+      <FileName>ViewModels\VerkoopDagboekViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boekhouding.Views.AankoopDagboekView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\AankoopDagboekView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Boekhouding.Views.KasBoekView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\KasBoekView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Boekhouding.Views.KlantDetailsView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\KlantDetailsView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Boekhouding.Views.KlantenView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\KlantenView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Boekhouding.Views.LeverancierDetailsView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\LeverancierDetailsView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Boekhouding.Views.LeveranciersView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\LeveranciersView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Boekhouding.Views.OverzichtView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\OverzichtView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Boekhouding.Views.VerkoopDagboekView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\VerkoopDagboekView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Boekhouding.Services.IBoekhoudingDataService" Collapsed="true">
+    <Position X="19.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAwAAAiAAEGAJAAAABAQAEAAAACAAgAAAAAAgAA=</HashCode>
+      <FileName>Services\IBoekhoudingDataService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

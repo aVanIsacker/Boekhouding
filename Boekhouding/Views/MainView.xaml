@@ -22,6 +22,7 @@
     </Window.Resources>
     <!-- methode 2 dynamisch-->
     <!--<views:KlantenView DataContext="{Binding KlantenVM}"/>-->
+   
     
 
     <Grid Background="#FF1B3C34" DataContext="{StaticResource MainViewModel}"  >
@@ -43,9 +44,9 @@
       
             <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1"  >
 
-                <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonAankoopdagboek" Content="Aankoopdagboek" Command="AankoopDagboekCommand"/>
-                <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonVerkoopdagboek" Content="Verkoopdagboek" Command="VerkoopDagboekCommand" />
-                <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonKasboek" Content="Kasboek" Command="KasBoekCommand" />
+                <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonAankoopdagboek" Content="Aankoopdagboek" />   
+                <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonVerkoopdagboek" Content="Verkoopdagboek"  />
+                <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonKasboek" Content="Kasboek"  />
 
             </StackPanel>
   
@@ -58,17 +59,21 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!--keep this one all the time?-->
-            <!--no, change to klanten with verkoop and to leveranciers with aankoop-->
+            
+            <!--Need to find a way to switch between the views-->
             
             
             <StackPanel Margin="10" Grid.Row="0" Grid.Column="0">
-                <views:KlantenView DataContext="{Binding KlantenVM}"/>
+                <!--<views:KlantenView DataContext="{Binding KlantenVM}"/>-->
+                <views:LeveranciersView DataContext="{Binding LeveranciersVM}"/>
+                
             </StackPanel>
 
             <!--have this one change with the button click-->
             <StackPanel Margin="10" Grid.Row="0" Grid.Column="1">
-                <views:KasBoekView DataContext="{Binding KasBoekVM}"/>
+                <!--<views:AankoopDagboekView DataContext="{Binding AankoopDagboekVM}"/>-->
+                <views:VerkoopDagboekView DataContext="{Binding VerkoopDagboekVM}"/>
+                <!--<views:KasBoekView DataContext="{Binding KasBoekVM}"/>-->
             </StackPanel>
 
 
@@ -76,12 +81,12 @@
 
         <!--bottom stackpannel with buttons style1-->
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
-            <Button x:Name="ButtonLeft" Content="???" 
+            <Button x:Name="ButtonLeft" Content="Home" 
                     Style="{StaticResource ButtonStyle1}" />
-            <Button x:Name="ButtonCenter" Content="???"
-                   Style="{StaticResource ButtonStyle1}" />
-            <Button x:Name="ButtonRight"  Content="???"
-                    Style="{StaticResource ButtonStyle1}" />
+            <Button x:Name="ButtonCenter" Content="Overzicht"
+                   Style="{StaticResource ButtonStyle1}" MinWidth="120" />
+            <!--<Button x:Name="ButtonRight"  Content="???"
+                    Style="{StaticResource ButtonStyle1}" />-->
         </StackPanel>
 
 

@@ -21,12 +21,12 @@
                 <ColumnDefinition Width="20"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="6" >
-                <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" >
+                <!--<Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" >
                     <Image Source="/Boekhouding;component/Resources/plus.png"/>
                 </Button>
                 <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" >
                     <Image Source="/Boekhouding;component/Resources/delete.png"/>
-                </Button>
+                </Button>-->
                 <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}"  >
                     <Image Source="/Boekhouding;component/Resources/edit.png"/>
                 </Button>
@@ -40,7 +40,7 @@
                  MinHeight="200"  Padding="6" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}"
                     ItemsSource="{Binding Leveranciers}"                                           
                     SelectedItem="{Binding SelectedLeverancier}" 
-                    DisplayMemberPath="Familienaam"/>
+                    DisplayMemberPath="NaamBedrijf"/>
                 <!-- Itemsource binden op property Leverancier-->
                 <!-- SelectedItem binden op property SelectedLeverancier-->
                 <!--DisplayMemberPath : wat wil ik tonen? hier familienaam -->

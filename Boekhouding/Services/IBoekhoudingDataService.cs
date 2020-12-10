@@ -12,15 +12,25 @@ namespace Boekhouding.Services
         IList<AankoopFactuur> GeefAankoopDagboek();
         IList<KasVerrichting> GeefKasboek();
         IList<VerkoopFactuur> GeefVerkoopDagboek();
+
+        IList<Klant> GeefAlleKlanten();
+        IList<Leverancier> GeefAlleLeveranciers();
+
         IList<AankoopFactuur> VerwijderAankoopFactuur(AankoopFactuur factuur);
         IList<AankoopFactuur> VoegAankoopFactuurToe(AankoopFactuur factuur);
         void WijzigAankoopFactuur(AankoopFactuur nieuwefactuur);
-        IList<Klant> GeefAlleKlanten();
-        IList<Leverancier> GeefAlleLeveranciers();
+
+        IList<VerkoopFactuur> VerwijderVerkoopFactuur(VerkoopFactuur factuur);
+        IList<VerkoopFactuur> VoegVerkoopFactuurToe(VerkoopFactuur factuur);
+        void WijzigVerkoopFactuur(VerkoopFactuur nieuwefactuur);
 
         IList<Leverancier> VoegLeverancierToe(Leverancier leverancier);
         void WijzigLeverancier(Leverancier leverancier);
         IList<Leverancier> VerwijderLeverancier(Leverancier leverancier);
-        //verder aan te vullen
+
+        IList<Klant> VoegKlantToe(Klant klant);
+        void WijzigKlant(Klant klant);
+        IList<Klant> VerwijderKlant(Klant klant);
+        //verder aan te vullen ok
     }
 }

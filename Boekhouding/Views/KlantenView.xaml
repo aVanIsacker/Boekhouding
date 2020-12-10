@@ -22,12 +22,12 @@
                 <ColumnDefinition Width="20"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="6" >
-                <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" >
+                <!--<Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" >
                     <Image Source="/Boekhouding;component/Resources/plus.png"/>
                 </Button>
                 <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" >
                     <Image Source="/Boekhouding;component/Resources/delete.png"/>
-                </Button>
+                </Button>-->
                 <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}"  >
                     <Image Source="/Boekhouding;component/Resources/edit.png"/>
                 </Button>

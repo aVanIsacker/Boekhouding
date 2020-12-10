@@ -13,7 +13,7 @@ namespace Boekhouding.ViewModels
     public class AankoopDagboekViewModel : ObservableObject
     {
         private IBoekhoudingDataService _dataservice;
-        private ObservableCollection<AankoopFactuur> _aankoop;
+        private ObservableCollection<AankoopFactuur> _aankoopDagboek;       //nodig voor de 2way binding
         private AankoopFactuur _selectedAankoop;
 
         
@@ -21,15 +21,15 @@ namespace Boekhouding.ViewModels
         public AankoopDagboekViewModel(IBoekhoudingDataService dataService)
         {
             _dataservice = dataService;
-            _aankoop = new ObservableCollection<AankoopFactuur>(dataService.GeefAankoopDagboek());
+            _aankoopDagboek = new ObservableCollection<AankoopFactuur>(dataService.GeefAankoopDagboek());
         }
-        public ObservableCollection<AankoopFactuur> Aankoop
+        public ObservableCollection<AankoopFactuur> AankoopDagboek      //public property dat zich moet binden aan bv datagrid
         {
-            get { return _aankoop; }
-            set { OnPropertyChanged(ref _aankoop, value); }
+            get { return _aankoopDagboek; }
+            set { OnPropertyChanged(ref _aankoopDagboek, value); }
         }
 
-        public AankoopFactuur SelectedAankoop
+        public AankoopFactuur SelectedAankoop       //SelectedAankoop property moet binden aan selected item op control
         {
             get { return _selectedAankoop; }
             set { OnPropertyChanged(ref _selectedAankoop, value); }

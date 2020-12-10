@@ -28,9 +28,10 @@
                 <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" Command="{Binding DeleteLeverancierCommand}">
                     <Image Source="/Boekhouding;component/Resources/delete.png"/>
                 </Button>
-                <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" Command="{Binding UpdateLeverancierCommand}">
-                    <Image Source="/Boekhouding;component/Resources/edit.png" />
-                </Button>
+                <!--<Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}"  >
+                    <Image Source="/Boekhouding;component/Resources/edit.png"/>
+                </Button>-->
+                <Button Margin="6" MinWidth="100" Style="{StaticResource ButtonStyle1}" >Opslaan</Button>
                 <Button Margin="6" MinWidth="100" Style="{StaticResource ButtonStyle1}" >Annuleer</Button>
 
             </StackPanel>
