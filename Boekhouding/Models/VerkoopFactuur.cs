@@ -8,5 +8,6 @@ namespace Boekhouding.Models
 {
     public class VerkoopFactuur : Factuur
     {
+        public string Type { get; set; }
     }
 }

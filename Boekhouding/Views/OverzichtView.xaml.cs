@@ -1,6 +1,4 @@
-﻿using Boekhouding.ViewModels;       //nodig voor navigation viewmodel
-using Boekhouding.Views;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Boekhouding
+namespace Boekhouding.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for OverzichtView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OverzichtView : UserControl
     {
-        public MainWindow()
+        public OverzichtView()
         {
             InitializeComponent();
-            
         }
-
     }
 }

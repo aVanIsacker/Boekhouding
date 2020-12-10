@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="Boekhouding.Views.LeverancierDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Boekhouding.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#FF1B3C34">
+
+        <!--details Leverancier-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="6" >
+                
+                <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" Command="{Binding AddLeverancierCommand}">
+                    <Image Source="/Boekhouding;component/Resources/plus.png"/>
+                 </Button>
+                <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" Command="{Binding DeleteLeverancierCommand}">
+                    <Image Source="/Boekhouding;component/Resources/delete.png"/>
+                </Button>
+                <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" Command="{Binding UpdateLeverancierCommand}">
+                    <Image Source="/Boekhouding;component/Resources/edit.png" />
+                </Button>
+                <Button Margin="6" MinWidth="100" Style="{StaticResource ButtonStyle1}" >Annuleer</Button>
+
+            </StackPanel>
+
+
+            <Border Grid.Row="1" Grid.Column="1" Margin="12" 
+                    CornerRadius="16,0,16,0" BorderThickness="2" 
+                    BorderBrush="#526e6c">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="6" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="40" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="2" Grid.Column="1" Content="Bedrijfsnaam:" HorizontalAlignment="Right" Foreground="#FFEFB344"/>
+                    <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding SelectedLeverancier.NaamBedrijf}" Foreground="DarkOliveGreen" />
+                    <Label Grid.Row="4" Grid.Column="1" Content="BTW nummer:" HorizontalAlignment="Right" Foreground="#FFEFB344"/>
+                    <TextBox Grid.Row="4" Grid.Column="3"  Text="{Binding SelectedLeverancier.BTWNr}" Foreground="DarkOliveGreen"/>
+                    <Label Grid.Row="6" Grid.Column="1" Content="Straat:" HorizontalAlignment="Right" Foreground="#FFEFB344"/>
+                    <TextBox Grid.Row="6" Grid.Column="3"  Text="{Binding SelectedLeverancier.Straat}" Foreground="DarkOliveGreen"/>
+                    <Label Grid.Row="8" Grid.Column="1" Content="Postcode:" HorizontalAlignment="Right" Foreground="#FFEFB344"/>
+                    <TextBox Grid.Row="8" Grid.Column="3"  Text="{Binding SelectedLeverancier.PostCode}" Foreground="DarkOliveGreen"/>
+                    <Label Grid.Row="10" Grid.Column="1" Content="Gemeente:" HorizontalAlignment="Right" Foreground="#FFEFB344"/>
+                    <TextBox Grid.Row="10" Grid.Column="3"  Text="{Binding SelectedLeverancier.Gemeente}" FontFamily="Lucida Sans" Foreground="DarkOliveGreen"/>
+
+                </Grid>
+            </Border>
+
+
+        </Grid>
+
+    </Grid>
+</UserControl>

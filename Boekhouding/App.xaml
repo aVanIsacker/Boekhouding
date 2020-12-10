@@ -11,6 +11,11 @@
 
         <ResourceDictionary>
 
+            
+
+            
+
+            
             <!--Button style 1 : icon buttons-->
 
             <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">

@@ -17,6 +17,10 @@ namespace Boekhouding.Services
         void WijzigAankoopFactuur(AankoopFactuur nieuwefactuur);
         IList<Klant> GeefAlleKlanten();
         IList<Leverancier> GeefAlleLeveranciers();
+
+        IList<Leverancier> VoegLeverancierToe(Leverancier leverancier);
+        void WijzigLeverancier(Leverancier leverancier);
+        IList<Leverancier> VerwijderLeverancier(Leverancier leverancier);
         //verder aan te vullen
     }
 }

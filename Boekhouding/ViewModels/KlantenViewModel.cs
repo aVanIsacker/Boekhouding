@@ -12,14 +12,19 @@ namespace Boekhouding.ViewModels
 {
     public class KlantenViewModel : ObservableObject
     {
+        //wat heb ik nodig om het te kunnen tonen?
         private IBoekhoudingDataService _dataService;
         private ObservableCollection<Klant> _klanten;
         private Klant _selectedKlant;
-        public KlantenViewModel(IBoekhoudingDataService dataService)
+
+        //stap1
+        public KlantenViewModel(IBoekhoudingDataService dataService)            //constructor met parameter : Wat wil je tonen?
         {
             _dataService = dataService;
             Klanten = new ObservableCollection<Klant>(dataService.GeefAlleKlanten());       //opvragen van klanten via constructor
         }
+
+        //hoe geraak je aan alles dat je wilt tonen?
         public ObservableCollection<Klant> Klanten          //Lijst van klanten is public property die moet binden met vb listbox
         {
             get { return _klanten; }

@@ -34,17 +34,15 @@
                 </Button>
             </StackPanel>
 
-
-            <Border Grid.Row="1" Grid.Column="1" Margin="12" 
+            <Border Grid.Row="1" Grid.Column="1" Margin="12"
                     CornerRadius="16,0,16,0" BorderThickness="2" 
-                    BorderBrush="#526e6c">
+                    BorderBrush="#526e6c" Padding="6,0">
 
-                <DataGrid Grid.Row="1" Grid.Column="1" Margin="1"
-                            MinHeight="200"  Padding="6"         
-                 BorderBrush="{x:Null}" Foreground="AntiqueWhite" Background="{x:Null}"
-                          ItemsSource="{Binding KasBoek}"  SelectedItem="SelectedKasVerrichting"/>
+                <DataGrid Grid.Row="1" Grid.Column="1" Margin="4"
+                            MinHeight="200"  Padding="6"
+                 BorderBrush="{x:Null}" Foreground="DarkOliveGreen" Background="#FF1B3C34"
+                          ItemsSource="{Binding VerkoopDagboek}"  SelectedItem="SelectedVerkoop"/>
             </Border>
-
 
         </Grid>
 

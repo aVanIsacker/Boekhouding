@@ -71,6 +71,8 @@ namespace Boekhouding.Services
         {
             //Verder aan te vullen
         }
+
+        //om de lijsten te geven
         public IList<Klant> GeefAlleKlanten()
         {
             return _klanten;
@@ -93,6 +95,8 @@ namespace Boekhouding.Services
         {
             return _kasboek;
         }
+
+        //om aankoopfacturen aan te passen
         public IList<AankoopFactuur> VoegAankoopFactuurToe(AankoopFactuur factuur)
         {
             _aankoopDagboek.Add(factuur);
@@ -112,6 +116,32 @@ namespace Boekhouding.Services
             _aankoopDagboek.Remove(factuur);
             return _aankoopDagboek;
         }
+
+        //om leveranciers aan te passen
+        public IList<Leverancier> VoegLeverancierToe(Leverancier leverancier)
+        {
+            int ContactNr = (_leveranciers.Count > 0) ? _leveranciers.Max(b => b.ContactNr) + 1 : 1;
+            leverancier.ContactNr = ContactNr;
+            _leveranciers.Add(leverancier);
+            return _leveranciers;
+        }
+        public void WijzigLeverancier(Leverancier nieuwLeverancier)
+        {
+            int index = _leveranciers.IndexOf(nieuwLeverancier);
+            if (index >= 0)
+            {
+                _leveranciers[index] = nieuwLeverancier;
+            }
+        }
+        public IList<Leverancier> VerwijderLeverancier(Leverancier leverancier)
+        {
+            _leveranciers.Remove(leverancier);
+            return _leveranciers;
+        }
+
         //Verder aan te vullen
+
+
+
     }
 }

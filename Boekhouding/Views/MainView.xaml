@@ -16,16 +16,16 @@
         <!-- ook unieke key nodig om te refereren als static resource-->
         
         <viewmodels:MainViewModel x:Key="MainViewModel"/>
+
         
-        
+
     </Window.Resources>
     <!-- methode 2 dynamisch-->
     <!--<views:KlantenView DataContext="{Binding KlantenVM}"/>-->
+    
 
-    <Grid Background="#FF1B3C34" DataContext="{StaticResource MainViewModel}" >
-        <!--<views:KlantenView/>-->
-
-
+    <Grid Background="#FF1B3C34" DataContext="{StaticResource MainViewModel}"  >
+       
         <Grid.RowDefinitions>
             <RowDefinition Height="32"/>
             <RowDefinition Height="50"/>
@@ -39,29 +39,39 @@
             <ColumnDefinition Width="32"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Top toolbar with big buttons -->
-        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" >
-            
-            <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonAankoopdagboek" Content="Aankoopdagboek"/>
-            <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonVerkoopdagboek" Content="Verkoopdagboek"/>
-            <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonKasboek" Content="Kasboek"/>
-        
-        </StackPanel>
-        
+        <!-- Top bar with big buttons -->
+      
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1"  >
 
-         <!--stackpanel with View 1 en 2--> 
-        <StackPanel Margin="10" Grid.Row="2" Grid.Column="1">
-            <views:KlantenView DataContext="{Binding KlantenVM}"/>
-        </StackPanel>
-        <StackPanel Margin="10" Grid.Column="1">
-            <views:KasBoekView DataContext="{Binding KasBoekVM}"/>
-        </StackPanel>
+                <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonAankoopdagboek" Content="Aankoopdagboek" Command="AankoopDagboekCommand"/>
+                <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonVerkoopdagboek" Content="Verkoopdagboek" Command="VerkoopDagboekCommand" />
+                <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonKasboek" Content="Kasboek" Command="KasBoekCommand" />
 
+            </StackPanel>
+  
+
+        <!--grid with stackpanel with View 1 en 2--> 
+        
         <Grid Grid.Row="2" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+
+            <!--keep this one all the time?-->
+            <!--no, change to klanten with verkoop and to leveranciers with aankoop-->
+            
+            
+            <StackPanel Margin="10" Grid.Row="0" Grid.Column="0">
+                <views:KlantenView DataContext="{Binding KlantenVM}"/>
+            </StackPanel>
+
+            <!--have this one change with the button click-->
+            <StackPanel Margin="10" Grid.Row="0" Grid.Column="1">
+                <views:KasBoekView DataContext="{Binding KasBoekVM}"/>
+            </StackPanel>
+
+
         </Grid>
 
         <!--bottom stackpannel with buttons style1-->

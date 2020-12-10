@@ -67,13 +67,28 @@
     <Compile Include="Services\MockBoekhoudingDataService.cs" />
     <Compile Include="Utilities\RelayCommand.cs" />
     <Compile Include="ViewModels\KasBoekViewModel.cs" />
+    <Compile Include="ViewModels\LeveranciersViewModel.cs" />
+    <Compile Include="ViewModels\OverzichtViewModel.cs" />
+    <Compile Include="ViewModels\VerkoopDagboekViewModel.cs" />
     <Compile Include="Views\KasBoekView.xaml.cs">
       <DependentUpon>KasBoekView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\VerkoopdagboekView.xaml.cs">
-      <DependentUpon>VerkoopdagboekView.xaml</DependentUpon>
+    <Compile Include="Views\KlantDetailsView.xaml.cs">
+      <DependentUpon>KlantDetailsView.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\AankoopdagboekView.xaml">
+    <Compile Include="Views\LeverancierDetailsView.xaml.cs">
+      <DependentUpon>LeverancierDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LeveranciersView.xaml.cs">
+      <DependentUpon>LeveranciersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OverzichtView.xaml.cs">
+      <DependentUpon>OverzichtView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VerkoopDagboekView.xaml.cs">
+      <DependentUpon>VerkoopDagboekView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\AankoopDagboekView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -81,7 +96,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\KlantDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\KlantenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LeverancierDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LeveranciersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -94,11 +121,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Utilities\ObservableObject.cs" />
-    <Compile Include="ViewModels\AankoopdagboekViewModel.cs" />
+    <Compile Include="ViewModels\AankoopDagboekViewModel.cs" />
     <Compile Include="ViewModels\KlantenViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="Views\AankoopdagboekView.xaml.cs">
-      <DependentUpon>AankoopdagboekView.xaml</DependentUpon>
+    <Compile Include="Views\AankoopDagboekView.xaml.cs">
+      <DependentUpon>AankoopDagboekView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\KlantenView.xaml.cs">
       <DependentUpon>KlantenView.xaml</DependentUpon>
@@ -107,7 +134,11 @@
       <DependentUpon>MainView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\VerkoopdagboekView.xaml">
+    <Page Include="Views\OverzichtView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VerkoopDagboekView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -130,6 +161,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -144,6 +176,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
