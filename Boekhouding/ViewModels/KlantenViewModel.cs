@@ -28,6 +28,8 @@ namespace Boekhouding.ViewModels
             AddKlantCommand = new RelayCommand(VoegKlantToe);
             UpdateKlantCommand = new RelayCommand(WijzigKlant);
             DeleteKlantCommand = new RelayCommand(VerwijderKlant);
+
+            
         }
 
         //hoe geraak je aan alles dat je wilt tonen?
@@ -66,11 +68,13 @@ namespace Boekhouding.ViewModels
             if (_klanten.Count > 0) SelectedKlant = _klanten[0];
         }
 
+       
 
         //public properties voor de buttons
         public ICommand AddKlantCommand { get; private set; }
         public ICommand DeleteKlantCommand { get; private set; }
         public ICommand UpdateKlantCommand { get; private set; }
 
+        
     }
 }

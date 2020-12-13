@@ -20,6 +20,8 @@ namespace Boekhouding.ViewModels
         private VerkoopDagboekViewModel _verkoopDagboekVM;
         private OverzichtViewModel _overzichtVM;
 
+        private KlantDetailsViewModel klantDetailsVM;
+
         public MainViewModel()
         {
             _dataService = new MockBoekhoudingDataService();
@@ -32,7 +34,15 @@ namespace Boekhouding.ViewModels
             ToonAankoopDagBoek = new RelayCommand(ZetAankoopDagboekZichtbaar);
             ToonVerkoopDagBoek = new RelayCommand(ZetVerkoopDagboekZichtbaar);
             ToonKasBoek = new RelayCommand(ZetKasboekZichtbaar);
-            AankoopDagboekZichtbaar = true;
+            //AankoopDagboekZichtbaar = true;
+            ToonNietsCommand = new RelayCommand(NietsZichtbaar);
+        }
+        
+        private void NietsZichtbaar()
+        {
+            AankoopDagboekZichtbaar = false;
+            VerkoopDagboekZichtbaar = false;
+            KasboekZichtbaar = false;
         }
 
         private void ZetKasboekZichtbaar()
@@ -55,18 +65,24 @@ namespace Boekhouding.ViewModels
             VerkoopDagboekZichtbaar = false;
             KasboekZichtbaar = false;
         }
+        
         private bool _aankoopDagboekZichtbaar;
+        
         public bool AankoopDagboekZichtbaar
         {
             get { return _aankoopDagboekZichtbaar; }
             set { OnPropertyChanged(ref _aankoopDagboekZichtbaar, value);}
         }
+        
         private bool _verkoopDagboekZichtbaar;
+        
         public bool VerkoopDagboekZichtbaar {
             get { return _verkoopDagboekZichtbaar; }
             set { OnPropertyChanged(ref _verkoopDagboekZichtbaar, value); }
         }
+        
         private bool _kasboekZichtbaar;
+        
         public bool KasboekZichtbaar {
             get { return _kasboekZichtbaar; }
             set { OnPropertyChanged(ref _kasboekZichtbaar, value); }
@@ -74,6 +90,7 @@ namespace Boekhouding.ViewModels
         public ICommand ToonAankoopDagBoek { get; private set; }
         public ICommand ToonVerkoopDagBoek { get; private set; }
         public ICommand ToonKasBoek { get; private set; }
+        public ICommand ToonNietsCommand { get; private set; }
 
 
         //dan deze KlantenViewModel property binden aan de datacontext van de KlantenView usercontrol
@@ -110,6 +127,8 @@ namespace Boekhouding.ViewModels
             get { return _overzichtVM; }
             set { OnPropertyChanged(ref _overzichtVM, value); }
         }
+
+        
         //code aanvullen met public properties voor LeveranciersVM ok,  AankoopDagboekVM ok, VerkoopDagboekVM ok en OverzichtVM ok
     }
 }

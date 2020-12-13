@@ -31,6 +31,9 @@
                 <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}"  >
                     <Image Source="/Boekhouding;component/Resources/edit.png"/>
                 </Button>
+
+                
+
             </StackPanel>
 
             <Border Grid.Row="1" Grid.Column="1" Margin="12"
@@ -47,10 +50,10 @@
                           ItemsSource="{Binding VerkoopDagboek}"  SelectedItem="SelectedVerkoop" 
                           AlternatingRowBackground="#FFEFB344"
                           AutoGenerateColumns="False">
-
+                  
+                    
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding UniekNr}" Header="Nummer" />
-                        <DataGridTextColumn Binding="{Binding UniekNr}" Header="Maand" />
 
                         <DataGridTemplateColumn Header="FactuurDatum">
                             <DataGridTemplateColumn.CellTemplate>

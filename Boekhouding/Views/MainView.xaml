@@ -91,11 +91,23 @@
         <!--bottom stackpannel with buttons style1-->
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
             <Button x:Name="ButtonLeft" Content="Home" 
-                    Style="{StaticResource ButtonStyle1}" />
+                    Style="{StaticResource ButtonStyle1}" 
+                    Command="{Binding ToonNietsCommand}"/>
             <Button x:Name="ButtonCenter" Content="Overzicht"
                    Style="{StaticResource ButtonStyle1}" MinWidth="120" />
             <Button x:Name="ButtonRight"  Content="Afsluiten"
                     Style="{StaticResource ButtonStyle1}" MinWidth="120"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" >
+            <TextBlock Foreground="#FFEFB344" Block.TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                <TextBlock.Inlines>
+                    <Run FontWeight="Bold" FontSize="14" Text="BLA"  FontFamily="Lucida Sans" />
+                    <LineBreak></LineBreak>
+                    <Run FontWeight="Light" FontSize="12" Text="Your view is the limit" />
+                </TextBlock.Inlines>
+                
+            </TextBlock>
         </StackPanel>
     </Grid>
 </Window>

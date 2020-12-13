@@ -28,16 +28,17 @@
                 <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" >
                     <Image Source="/Boekhouding;component/Resources/delete.png"/>
                 </Button>-->
-                <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" Command ="{Binding KlantenDetailsVM}" >
+                <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" Command ="{Binding ToonKlantDetailsViewCommand}"    >
                     <Image Source="/Boekhouding;component/Resources/edit.png" />
                 </Button>
+               
             </StackPanel>
 
 
             <Border Grid.Row="1" Grid.Column="1" Margin="12" 
                     CornerRadius="16,0,16,0" BorderThickness="2" 
                     BorderBrush="#526e6c">
-                <ListBox Grid.Row="1" Grid.Column="1" Margin="1" x:Name="Klantenlijst"
+                <ListBox Grid.Row="1" Grid.Column="1" Margin="1" x:Name="Klantenlijst" 
                  MinHeight="200"  Padding="6" BorderBrush="{x:Null}" Foreground="White" Background="{x:Null}"
                     ItemsSource="{Binding Klanten}"                                           
                     SelectedItem="{Binding SelectedKlant}" 
