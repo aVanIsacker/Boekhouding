@@ -8,16 +8,20 @@
   
         xmlns:views="clr-namespace:Boekhouding.Views" xmlns:viewmodels="clr-namespace:Boekhouding.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="#FF1B3C34">
+        Title="MainWindow" Height="600" Width="800" Background="#FF1B3C34">
     
     <!-- eerste methode om te koppelen, niet dynamisch, boven de namespace aanvullen-->
     <Window.Resources>
+        <!--default source of binding, unless you specifically declare another source-->
+
         <!-- hier gebeurt de binding met de property KlantenViewModel-->
         <!-- ook unieke key nodig om te refereren als static resource-->
         
         <viewmodels:MainViewModel x:Key="MainViewModel"/>
-
         
+        <!--dit is om de visibility van de views te linken met de buttons-->
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
 
     </Window.Resources>
     <!-- methode 2 dynamisch-->
@@ -44,14 +48,14 @@
       
             <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1"  >
 
-                <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonAankoopdagboek" Content="Aankoopdagboek" />   
-                <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonVerkoopdagboek" Content="Verkoopdagboek"  />
-                <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonKasboek" Content="Kasboek"  />
+                <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonAankoopdagboek" Content="Aankoopdagboek" Command="{Binding ToonAankoopDagBoek}" />   <!--hier wordt de command gelinkt met de button-->
+                <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonVerkoopdagboek" Content="Verkoopdagboek" Command="{Binding ToonVerkoopDagBoek}" />
+                <Button Style="{StaticResource ButtonStyle2Toolbar}" x:Name="ButtonKasboek" Content="Kasboek" Command="{Binding ToonKasBoek}" />
 
             </StackPanel>
   
 
-        <!--grid with stackpanel with View 1 en 2--> 
+        <!--grid with stackpanel with View for first(klanten + leverancier) en second (aankoopdagboek+verkoopdagboek+kasboek)--> 
         
         <Grid Grid.Row="2" Grid.Column="1">
             <Grid.ColumnDefinitions>
@@ -60,23 +64,28 @@
             </Grid.ColumnDefinitions>
 
             
-            <!--Need to find a way to switch between the views-->
-            
-            
-            <StackPanel Margin="10" Grid.Row="0" Grid.Column="0">
-                <!--<views:KlantenView DataContext="{Binding KlantenVM}"/>-->
+            <!--linked with the views of verkoopdagboek en aankoopdagboek-->
+            <!--unvisible when kasboek selected-->
+            <StackPanel Margin="10" Grid.Row="0" Grid.Column="0"  Visibility="{Binding VerkoopDagboekZichtbaar, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <views:KlantenView DataContext="{Binding KlantenVM}"/>
+            </StackPanel>
+
+            <StackPanel Margin="10" Grid.Row="0" Grid.Column="0"  Visibility="{Binding AankoopDagboekZichtbaar, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <views:LeveranciersView DataContext="{Binding LeveranciersVM}"/>
-                
             </StackPanel>
 
             <!--have this one change with the button click-->
-            <StackPanel Margin="10" Grid.Row="0" Grid.Column="1">
+            <StackPanel Margin="10" Grid.Row="0" Grid.Column="1"  Visibility="{Binding AankoopDagboekZichtbaar, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <views:AankoopDagboekView DataContext="{Binding AankoopDagboekVM}"/>
+            </StackPanel>
+            <StackPanel Margin="10" Grid.Row="0" Grid.Column="1"  Visibility="{Binding VerkoopDagboekZichtbaar, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <!--<views:AankoopDagboekView DataContext="{Binding AankoopDagboekVM}"/>-->
                 <views:VerkoopDagboekView DataContext="{Binding VerkoopDagboekVM}"/>
-                <!--<views:KasBoekView DataContext="{Binding KasBoekVM}"/>-->
+                <!-- <views:KasBoekView DataContext="{Binding KasBoekVM}"/>-->
             </StackPanel>
-
-
+            <StackPanel Margin="10" Grid.Row="0" Grid.Column="1"  Visibility="{Binding KasboekZichtbaar, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <views:KasBoekView DataContext="{Binding KasBoekVM}"/>
+            </StackPanel>
         </Grid>
 
         <!--bottom stackpannel with buttons style1-->
@@ -85,13 +94,8 @@
                     Style="{StaticResource ButtonStyle1}" />
             <Button x:Name="ButtonCenter" Content="Overzicht"
                    Style="{StaticResource ButtonStyle1}" MinWidth="120" />
-            <!--<Button x:Name="ButtonRight"  Content="???"
-                    Style="{StaticResource ButtonStyle1}" />-->
+            <Button x:Name="ButtonRight"  Content="Afsluiten"
+                    Style="{StaticResource ButtonStyle1}" MinWidth="120"/>
         </StackPanel>
-
-
-
-
-
     </Grid>
 </Window>

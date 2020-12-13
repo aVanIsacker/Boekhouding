@@ -37,10 +37,75 @@
                     CornerRadius="16,0,16,0" BorderThickness="2" 
                     BorderBrush="#526e6c" Padding="6,0">
 
+                <!--<DataGrid Grid.Row="1" Grid.Column="1" Margin="4"
+                          MinHeight="200"  Padding="6" BorderBrush="{x:Null}" Foreground="DarkOliveGreen" Background="#FF1B3C34"
+                          ItemsSource="{Binding VerkoopDagboek}"  SelectedItem="SelectedVerkoop" />-->
+
+
                 <DataGrid Grid.Row="1" Grid.Column="1" Margin="4"
-                            MinHeight="200"  Padding="6"
-                 BorderBrush="{x:Null}" Foreground="DarkOliveGreen" Background="#FF1B3C34"
-                          ItemsSource="{Binding VerkoopDagboek}"  SelectedItem="SelectedVerkoop" />
+                    MinHeight="200"  Padding="6" BorderBrush="{x:Null}" Foreground="DarkOliveGreen" Background="#FF1B3C34"                  
+                          ItemsSource="{Binding VerkoopDagboek}"  SelectedItem="SelectedVerkoop" 
+                          AlternatingRowBackground="#FFEFB344"
+                          AutoGenerateColumns="False">
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding UniekNr}" Header="Nummer" />
+                        <DataGridTextColumn Binding="{Binding UniekNr}" Header="Maand" />
+
+                        <DataGridTemplateColumn Header="FactuurDatum">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding FactuurDatum,StringFormat=d}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <DatePicker SelectedDate="{Binding FactuurDatum}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                        </DataGridTemplateColumn>
+                        
+                        <DataGridTextColumn Binding="{Binding FactuurDatum, StringFormat={}{0:MMM}}" Header="Maand" />
+                        <DataGridTextColumn Binding="{Binding Contact}" Header="Debiteur" />            <!--need to fix the format-->
+                        <DataGridTextColumn Binding="{Binding Omschrijving}" Header="Omschrijving product/dienst" />        <!--combobox van maken?-->
+                        <DataGridTextColumn Binding="{Binding BedragExclBTW}" Header="Bedrag Ex BTW" />        
+                        <DataGridTextColumn Binding="{Binding BTWTarief}" Header="BTW Tarief" />        <!--combobox van maken?-->
+                        <DataGridTextColumn Binding="{Binding BTWBedrag}" Header="BTW bedrag" />        
+                        <DataGridTextColumn Binding="{Binding BedragInclBTW}" Header="Bedrag Incl BTW" />        
+                        <DataGridTextColumn Binding="{Binding BedragInclBTW}" Header="Status" />                <!--checkbox van maken? als true dan pas betaaldatum-->  
+                        <DataGridTextColumn Binding="{Binding BedragInclBTW}" Header="Bedrag Incl BTW" />
+
+                        <DataGridTemplateColumn Header="VervalDatum">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding VervalDatum,StringFormat=d}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <DatePicker SelectedDate="{Binding VervalDatum}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="BetaalDatum">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding BetaalDatum,StringFormat=d}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <DatePicker SelectedDate="{Binding BetaalDatum}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                        </DataGridTemplateColumn>
+
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
             </Border>
 
         </Grid>

@@ -23,6 +23,8 @@ namespace Boekhouding.Views
         public KlantDetailsView()
         {
             InitializeComponent();
+          
+
         }
     }
 }

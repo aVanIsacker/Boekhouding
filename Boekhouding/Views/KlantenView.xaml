@@ -28,8 +28,8 @@
                 <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" >
                     <Image Source="/Boekhouding;component/Resources/delete.png"/>
                 </Button>-->
-                <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}"  >
-                    <Image Source="/Boekhouding;component/Resources/edit.png"/>
+                <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" Command ="{Binding KlantenDetailsVM}" >
+                    <Image Source="/Boekhouding;component/Resources/edit.png" />
                 </Button>
             </StackPanel>
 
