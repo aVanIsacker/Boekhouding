@@ -20,7 +20,7 @@ namespace Boekhouding.ViewModels
         private VerkoopDagboekViewModel _verkoopDagboekVM;
         private OverzichtViewModel _overzichtVM;
 
-        private KlantDetailsViewModel klantDetailsVM;
+        private KlantDetailsViewModel _klantDetailsVM;
 
         public MainViewModel()
         {
@@ -31,18 +31,29 @@ namespace Boekhouding.ViewModels
             AankoopDagboekVM = new AankoopDagboekViewModel(_dataService);
             VerkoopDagboekVM = new VerkoopDagboekViewModel(_dataService);
             OverzichtVM = new OverzichtViewModel(_dataService);
+            
             ToonAankoopDagBoek = new RelayCommand(ZetAankoopDagboekZichtbaar);
             ToonVerkoopDagBoek = new RelayCommand(ZetVerkoopDagboekZichtbaar);
             ToonKasBoek = new RelayCommand(ZetKasboekZichtbaar);
             //AankoopDagboekZichtbaar = true;
             ToonNietsCommand = new RelayCommand(NietsZichtbaar);
+            //ToonKlantDetailsCommand = new RelayCommand(ZetKlantDetailsZichtbaar);
         }
+
+        //private void ZetKlantDetailsZichtbaar()
+        //{
+        //    AankoopDagboekZichtbaar = false;
+        //    VerkoopDagboekZichtbaar = true;
+        //    KasboekZichtbaar = false;
+        //    KlantDetailsZichtbaar = true;
+        //}
         
         private void NietsZichtbaar()
         {
             AankoopDagboekZichtbaar = false;
             VerkoopDagboekZichtbaar = false;
             KasboekZichtbaar = false;
+            KlantDetailsZichtbaar = false;
         }
 
         private void ZetKasboekZichtbaar()
@@ -50,6 +61,7 @@ namespace Boekhouding.ViewModels
             AankoopDagboekZichtbaar = false;
             VerkoopDagboekZichtbaar = false;
             KasboekZichtbaar = true;
+            KlantDetailsZichtbaar = false;
         }
 
         private void ZetVerkoopDagboekZichtbaar()
@@ -57,6 +69,7 @@ namespace Boekhouding.ViewModels
             AankoopDagboekZichtbaar = false;
             VerkoopDagboekZichtbaar = true;
             KasboekZichtbaar = false;
+            KlantDetailsZichtbaar = true;
         }
 
         private void ZetAankoopDagboekZichtbaar()
@@ -64,6 +77,7 @@ namespace Boekhouding.ViewModels
             AankoopDagboekZichtbaar = true;
             VerkoopDagboekZichtbaar = false;
             KasboekZichtbaar = false;
+            KlantDetailsZichtbaar = false;
         }
         
         private bool _aankoopDagboekZichtbaar;
@@ -87,10 +101,21 @@ namespace Boekhouding.ViewModels
             get { return _kasboekZichtbaar; }
             set { OnPropertyChanged(ref _kasboekZichtbaar, value); }
         }
+
+        private bool _klantDetailsZichtbaar;
+        public bool KlantDetailsZichtbaar
+        {
+            get { return _klantDetailsZichtbaar; }
+            set { OnPropertyChanged(ref _klantDetailsZichtbaar, value); }
+        }
+
+
         public ICommand ToonAankoopDagBoek { get; private set; }
         public ICommand ToonVerkoopDagBoek { get; private set; }
         public ICommand ToonKasBoek { get; private set; }
         public ICommand ToonNietsCommand { get; private set; }
+        public ICommand ToonKlantDetailsCommand { get; private set; }
+        
 
 
         //dan deze KlantenViewModel property binden aan de datacontext van de KlantenView usercontrol
@@ -128,6 +153,11 @@ namespace Boekhouding.ViewModels
             set { OnPropertyChanged(ref _overzichtVM, value); }
         }
 
+        public KlantDetailsViewModel KlantDetailsVM
+        {
+            get { return _klantDetailsVM; }
+            set { OnPropertyChanged(ref _klantDetailsVM, value); }
+        }
         
         //code aanvullen met public properties voor LeveranciersVM ok,  AankoopDagboekVM ok, VerkoopDagboekVM ok en OverzichtVM ok
     }

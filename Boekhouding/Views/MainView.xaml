@@ -62,7 +62,10 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
             
             <!--linked with the views of verkoopdagboek en aankoopdagboek-->
             <!--unvisible when kasboek selected-->
@@ -86,6 +89,14 @@
             <StackPanel Margin="10" Grid.Row="0" Grid.Column="1"  Visibility="{Binding KasboekZichtbaar, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <views:KasBoekView DataContext="{Binding KasBoekVM}"/>
             </StackPanel>
+            
+            <!--add extra temporary stackpanel for details view until I figure out popup with dialog-->
+            <StackPanel Margin="10" Grid.Row="1" Grid.Column="1"  Visibility="{Binding KlantDetailsZichtbaar, Converter={StaticResource BooleanToVisibilityConverter}}">
+          
+                <views:KlantDetailsView DataContext="{Binding KlantDetailsVM}"/>
+                
+            </StackPanel>
+            
         </Grid>
 
         <!--bottom stackpannel with buttons style1-->
@@ -93,12 +104,14 @@
             <Button x:Name="ButtonLeft" Content="Home" 
                     Style="{StaticResource ButtonStyle1}" 
                     Command="{Binding ToonNietsCommand}"/>
+            <!--When home is selected, aankoopdagboek, verkoopdagboek en kasboek are not visible-->
             <Button x:Name="ButtonCenter" Content="Overzicht"
                    Style="{StaticResource ButtonStyle1}" MinWidth="120" />
             <Button x:Name="ButtonRight"  Content="Afsluiten"
                     Style="{StaticResource ButtonStyle1}" MinWidth="120"/>
         </StackPanel>
 
+        <!--bottom stackpanel on the right with textblock with company logo-->
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" >
             <TextBlock Foreground="#FFEFB344" Block.TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" >
                 <TextBlock.Inlines>

@@ -28,7 +28,7 @@
                 <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" >
                     <Image Source="/Boekhouding;component/Resources/delete.png"/>
                 </Button>-->
-                <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" Command ="{Binding ToonKlantDetailsViewCommand}"    >
+                <Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}" Command ="{Binding ToonKlantDetailsCommand}"    >
                     <Image Source="/Boekhouding;component/Resources/edit.png" />
                 </Button>
                

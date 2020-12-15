@@ -30,7 +30,7 @@
                 <!--<Button Margin="6" MinWidth="60" Style="{StaticResource ButtonStyle1}"  >
                     <Image Source="/Boekhouding;component/Resources/edit.png"/>
                 </Button>-->
-                <Button Margin="6" MinWidth="100" Style="{StaticResource ButtonStyle1}" >Opslaan</Button>
+                <Button Margin="6" MinWidth="100" Style="{StaticResource ButtonStyle1}">Opslaan</Button>
                 <Button Margin="6" MinWidth="100" Style="{StaticResource ButtonStyle1}" > Annuleer </Button>
                
             </StackPanel>
@@ -66,7 +66,7 @@
                     <Label Grid.Row="2" Grid.Column="1" Content="Voornaam:" HorizontalAlignment="Right" Foreground="#FFEFB344"/>
                     <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding SelectedKlant.Voornaam}" Foreground="DarkOliveGreen" />
                     <Label Grid.Row="4" Grid.Column="1" Content="Familienaam:" HorizontalAlignment="Right" Foreground="#FFEFB344"/>
-                    <TextBox Grid.Row="4" Grid.Column="3"  Text="{Binding SelectedKlant.Familienaam}" Foreground="DarkOliveGreen"/>
+                    <TextBox  Grid.Row="4" Grid.Column="3"  Text="{Binding SelectedKlant.Familienaam}" Foreground="DarkOliveGreen"/>
                     <Label Grid.Row="6" Grid.Column="1" Content="Straat:" HorizontalAlignment="Right" Foreground="#FFEFB344"/>
                     <TextBox Grid.Row="6" Grid.Column="3"  Text="{Binding SelectedKlant.Straat}" Foreground="DarkOliveGreen"/>
                     <Label Grid.Row="8" Grid.Column="1" Content="Postcode:" HorizontalAlignment="Right" Foreground="#FFEFB344"/>

@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace Boekhouding.ViewModels
 {
-    public class KlantDetailsViewModel : ObservableObject
+    public class KlantDetailsViewModel : ObservableObject          /* needs to be adapted to only the data we need, right now it's a copy of KlantenViewModel*/
     {
         //wat heb ik nodig om het te kunnen tonen?
         private IBoekhoudingDataService _dataService;
